@@ -1,0 +1,13 @@
+# Bloque para el Caddyfile del servidor (normalmente /etc/caddy/Caddyfile).
+# Se sirve solo la carpeta public/ del repositorio.
+
+imegames.com {
+	root * /var/www/imegames-web/public
+	file_server
+	encode zstd gzip
+	header /app-ads.txt Content-Type "text/plain; charset=utf-8"
+}
+
+www.imegames.com {
+	redir https://imegames.com{uri} permanent
+}
