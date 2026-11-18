@@ -12,18 +12,24 @@ Todo lo que se publica está en `public/` (HTML y CSS sin compilación).
 | `/chipbeat/privacidad.html` | Política de privacidad de Chip Beat (URL para Google Play) |
 | `/app-ads.txt` | Verificación de AdMob |
 
-## Puesta en marcha en el servidor (una vez)
+## Servidor
+
+Un contenedor nginx propio (`docker-compose.yml`) sirve `public/` en `127.0.0.1:8082`, y el Caddy común
+(`/opt/projects/caddy`) hace de proxy con HTTPS para `imegames.com` (bloques en `Caddyfile.ejemplo`).
+
+### Puesta en marcha (una vez)
 
 ```bash
-sudo git clone https://github.com/briancalvillo/imegames-web.git /var/www/imegames-web
-# Añadir el bloque de Caddyfile.ejemplo a /etc/caddy/Caddyfile
-sudo systemctl reload caddy
+git clone https://github.com/briancalvillo/imegames-web.git /opt/projects/imegames-web
+cd /opt/projects/imegames-web && docker compose up -d
+# Añadir Caddyfile.ejemplo al final de /opt/projects/caddy/Caddyfile y recargar:
+docker exec caddy caddy reload --config /etc/caddy/Caddyfile
 ```
 
-## Actualizar
+### Actualizar
 
 ```bash
-cd /var/www/imegames-web && sudo git pull
+cd /opt/projects/imegames-web && git pull
 ```
 
-No hace falta recargar Caddy: sirve los ficheros directamente.
+No hace falta reiniciar nada: nginx lee `public/` directamente.
