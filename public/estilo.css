@@ -56,3 +56,5 @@ h3.sub{font-size:22px;margin:40px 0 14px}
 .otros .game h3{font-size:20px}.otros .game img{width:88px}.otros .game{grid-template-columns:88px 1fr;padding:18px}
 @media (max-width:760px){.edugame{grid-template-columns:1fr}}
 .porque{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.langsw{border:1px solid var(--line);border-radius:99px;padding:3px 12px;color:var(--txt)!important}
+@media (max-width:560px){nav a:not(.langsw):nth-child(-n+2){display:none}}
