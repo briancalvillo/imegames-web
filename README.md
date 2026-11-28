@@ -7,7 +7,7 @@ Todo lo que se publica está en `public/` (HTML y CSS sin compilación).
 
 | Ruta | Contenido |
 |---|---|
-| `/` | Portada de IME Games: juegos educativos (Independitza't y Primer contracte, destacados) y otros juegos |
+| `/` | Portada de IME Games: juegos educativos (Independitza't, Primer contracte y Taller tècnic) y otros juegos |
 | `/chipbeat/` | Página de Chip Beat |
 | `/chipbeat/privacidad.html` | Política de privacidad de Chip Beat (URL para Google Play) |
 | `/app-ads.txt` | Verificación de AdMob |
